@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index2_2";
+}
+
+<body>
+    <h1>用户列表如下：</h1>
+    <ul>
+        @foreach (var item in ViewData["user"] as List<T2.Models.users>)
+        {
+            <li>@item.username</li>
+        }
+    </ul>
+</body>
+

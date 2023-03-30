@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<body>
+    <h1>@ViewBag.Message</h1>
+    姓名：@ViewData["myName"]<br/>
+    年龄：@TempData["myAge"]<br/>
+    <a href="~/Home/About">关于</a>
+</body>
