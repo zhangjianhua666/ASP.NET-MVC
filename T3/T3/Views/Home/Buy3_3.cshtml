@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Buy3_3";
+}
+
+<body>
+    <h1>您要购买火车票的人员如下：</h1>
+    <ul>
+        @foreach (var item in ViewBag.persons)
+        {
+            <li>@item</li>
+        }
+
+    </ul>
+</body>
