@@ -10,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div>
@@ -83,8 +84,8 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.userid }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("编辑", "Edit", new { id = Model.userid }) |
+        @Html.ActionLink("首页", "Index")
     </p>
 </body>
 </html>

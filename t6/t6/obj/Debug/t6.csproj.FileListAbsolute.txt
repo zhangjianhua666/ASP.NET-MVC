@@ -77,7 +77,6 @@ D:\c#\MVC\t6\t6\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
 D:\c#\MVC\t6\t6\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 D:\c#\MVC\t6\t6\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\c#\MVC\t6\t6\bin\zh-Hans\System.Web.Mvc.resources.dll
-D:\c#\MVC\t6\t6\obj\Debug\t6.csproj.AssemblyReference.cache
 D:\c#\MVC\t6\t6\obj\Debug\t6.csproj.CoreCompileInputs.cache
 D:\c#\MVC\t6\t6\obj\Debug\t6.csproj.CopyComplete
 D:\c#\MVC\t6\t6\obj\Debug\t6.dll
