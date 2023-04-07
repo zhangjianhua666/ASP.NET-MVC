@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fashionshoppingDBModelStoreContainer" CdmEntityContainer="fashionshoppingDBEntities">
+    <EntitySetMapping Name="Procate">
+      <EntityTypeMapping TypeName="fashionshoppingDBModel.Procate">
+        <MappingFragment StoreEntitySet="Procate">
+          <ScalarProperty Name="cateid" ColumnName="cateid" />
+          <ScalarProperty Name="catename" ColumnName="catename" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="fashionshoppingDBModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="cateid" ColumnName="cateid" />
+          <ScalarProperty Name="marketprice" ColumnName="marketprice" />
+          <ScalarProperty Name="localprice" ColumnName="localprice" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="posttime" ColumnName="posttime" />
+          <ScalarProperty Name="cnt" ColumnName="cnt" />
+          <ScalarProperty Name="imageid" ColumnName="imageid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sysuser">
+      <EntityTypeMapping TypeName="fashionshoppingDBModel.Sysuser">
+        <MappingFragment StoreEntitySet="Sysuser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="fashionshoppingDBModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nick" ColumnName="nick" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="secPwd" ColumnName="secPwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

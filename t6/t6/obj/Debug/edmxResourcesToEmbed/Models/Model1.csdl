@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fashionshoppingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Procate">
+    <Key>
+      <PropertyRef Name="cateid" />
+    </Key>
+    <Property Name="cateid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parentid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__cateid__2A4B4B5E" FromRole="Procate" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="productid" />
+    </Key>
+    <Property Name="productid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cateid" Type="Int32" />
+    <Property Name="marketprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="localprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="posttime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cnt" Type="Int32" />
+    <Property Name="imageid" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Procate" Relationship="Self.FK__Product__cateid__2A4B4B5E" FromRole="Product" ToRole="Procate" />
+  </EntityType>
+  <EntityType Name="Sysuser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="role" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nick" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="secPwd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Product__cateid__2A4B4B5E">
+    <End Role="Procate" Type="Self.Procate" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procate">
+        <PropertyRef Name="cateid" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="cateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="fashionshoppingDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Procate" EntityType="Self.Procate" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Sysuser" EntityType="Self.Sysuser" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__Product__cateid__2A4B4B5E" Association="Self.FK__Product__cateid__2A4B4B5E">
+      <End Role="Procate" EntitySet="Procate" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

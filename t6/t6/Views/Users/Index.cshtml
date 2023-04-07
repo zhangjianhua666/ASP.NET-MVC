@@ -1,0 +1,84 @@
+﻿@model IEnumerable<t6.Models.Users>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("添加管理员", "Create")
+    </p>
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nick)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.secPwd)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pwd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nick)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.secPwd)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id=item.userid }) |
+                @Html.ActionLink("查看", "Details", new { id=item.userid }) |
+                @Html.ActionLink("删除", "Delete", new { id=item.userid })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

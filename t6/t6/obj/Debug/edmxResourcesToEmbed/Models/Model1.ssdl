@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fashionshoppingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Procate">
+    <Key>
+      <PropertyRef Name="cateid" />
+    </Key>
+    <Property Name="cateid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parentid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="productid" />
+    </Key>
+    <Property Name="productid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cateid" Type="int" />
+    <Property Name="marketprice" Type="money" />
+    <Property Name="localprice" Type="money" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="posttime" Type="varchar" MaxLength="50" />
+    <Property Name="cnt" Type="int" />
+    <Property Name="imageid" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Sysuser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="pwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="nick" Type="nvarchar" MaxLength="50" />
+    <Property Name="QQ" Type="nvarchar" MaxLength="20" />
+    <Property Name="phone" Type="nvarchar" MaxLength="12" />
+    <Property Name="question" Type="nvarchar" MaxLength="200" />
+    <Property Name="secPwd" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__Product__cateid__2A4B4B5E">
+    <End Role="Procate" Type="Self.Procate" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procate">
+        <PropertyRef Name="cateid" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="cateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="fashionshoppingDBModelStoreContainer">
+    <EntitySet Name="Procate" EntityType="Self.Procate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sysuser" EntityType="Self.Sysuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Product__cateid__2A4B4B5E" Association="Self.FK__Product__cateid__2A4B4B5E">
+      <End Role="Procate" EntitySet="Procate" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

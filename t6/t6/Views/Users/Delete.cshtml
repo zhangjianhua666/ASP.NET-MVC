@@ -1,0 +1,96 @@
+﻿@model t6.Models.Users
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Users</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.username)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.username)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.pwd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pwd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.nick)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nick)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.QQ)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.QQ)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.phone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.question)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.question)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.secPwd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.secPwd)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="删除" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
